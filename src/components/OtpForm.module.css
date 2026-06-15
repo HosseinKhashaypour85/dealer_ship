@@ -1,0 +1,325 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    background: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    box-sizing: border-box;
+}
+
+/* سایدبار سمت چپ */
+.leftSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    background: #ffffff;
+}
+
+/* سایدبار سمت راست */
+.rightSide {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brandTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #020617;
+    margin: 0;
+}
+
+.brandSubtitle {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: #020617;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.description {
+    margin-top: 16px;
+    max-width: 400px;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.features {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.feature h4 {
+    margin: 0 0 2px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #020617;
+}
+
+.feature p {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* اندازه فیکس باکس آیکون‌ها بدون پدینگ جهت جلوگیری از مچاله شدن اموجی */
+.icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    box-sizing: content-box;
+    padding: 5px;
+}
+
+.mobileBrand {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* کانتینر اصلی فرم - عریض و فشرده مطابق دیزاین جدید شما */
+.card {
+    width: 100%;
+    max-width: 540px;
+    padding: 32px 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 0px 15px -2px #000000;
+    box-shadow: 0px 0px 15px -2px #000000;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* آیکون پاکت ایمیل بالای هدر کارت */
+.emailIconWrapper {
+    font-size: 24px;
+    margin-bottom: 12px;
+    color: #475569;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    color: #020617;
+    margin: 0 0 8px 0;
+}
+
+.subtitle {
+    font-size: 13px;
+    color: #64748b;
+    margin: 0 0 24px 0;
+    line-height: 1.5;
+}
+
+.emailHighlight {
+    color: #020617;
+    font-weight: 600;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.otpLabel {
+    font-size: 12px;
+    font-weight: 600;
+    color: #64748b;
+    text-align: center;
+    margin-bottom: -4px;
+}
+
+/* گرید باکس‌های ورود کد ۶ رقمی */
+.otpContainer {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.otpInput {
+    width: 46px;
+    height: 46px;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    background: #f8fafc;
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+    outline: none;
+    transition: all 0.2s;
+    color: black;
+}
+
+.otpInput:focus {
+    border-color: #94a3b8;
+    background: #ffffff;
+}
+
+/* بخش استایل تایمر معکوس */
+.timerWrapper {
+    font-size: 12px;
+    color: #94a3b8;
+    text-align: center;
+    margin-top: -4px;
+}
+
+.timerCountdown {
+    color: #475569;
+    font-weight: 600;
+}
+
+/* دکمه هماهنگ طوسی/سرمه‌ای با عکس */
+.button {
+    height: 44px;
+    background: #7c8ba1;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 4px;
+    transition: background 0.2s;
+}
+
+.button:hover {
+    background: #64748b;
+}
+
+/* بخش لینک‌های پایینی */
+.linksContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 4px;
+}
+
+.changeEmailLink {
+    font-size: 12px;
+    color: #64748b;
+    text-decoration: none;
+}
+
+.changeEmailLink:hover {
+    text-decoration: underline;
+}
+
+.resendText {
+    font-size: 12px;
+    color: #64748b;
+    margin: 0;
+}
+
+.resendLink {
+    color: #020617;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.resendLink:hover {
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   ریسپانسیو حالت موبایل ۳۹۰ پیکسلی (مطابق تصویر سمت چپ)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .page {
+        background: #ffffff;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 30px 20px;
+    }
+
+    .leftSide {
+        display: none;
+    }
+
+    .rightSide {
+        flex: none;
+        width: 100%;
+        padding: 0;
+        background: #ffffff;
+    }
+
+    .mobileBrand {
+        display: flex;
+    }
+
+    .card {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+    }
+
+    .otpInput {
+        width: 40px;
+        height: 40px;
+    }
+}
+
+/* دکمه در حالت پیش‌فرض (غیرفعال / خاکستری کمرنگ) */
+.button {
+    height: 44px;
+    background: #cbd5e1;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: not-allowed;
+    width: 100%;
+    margin-top: 4px;
+    transition: all 0.3s ease;
+}
+
+/* استایل فعال شدن دکمه بعد از پر شدن تمام باکس‌ها */
+.buttonActive {
+    background: #020617;
+    /* تغییر رنگ به مشکیِ عکس */
+    cursor: pointer;
+}
+
+.buttonActive:hover {
+    background: #0f172a;
+}

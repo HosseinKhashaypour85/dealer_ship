@@ -1,0 +1,334 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    background: #ffffff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    box-sizing: border-box;
+}
+
+/* سایدبار سمت چپ */
+.leftSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    background: #ffffff;
+}
+
+/* سایدبار سمت راست */
+.rightSide {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brandTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #020617;
+    margin: 0;
+}
+
+.brandSubtitle {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: #020617;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+.description {
+    margin-top: 16px;
+    max-width: 400px;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.features {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.feature h4 {
+    margin: 0 0 2px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #020617;
+}
+
+.feature p {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* تنظیم باکس آیکون‌های فیچر به صورت ثابت برای جلوگیری از تداخل پدینگ */
+.icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    flex-shrink: 0;
+    box-sizing: content-box;
+    padding: 3px;
+}
+
+.mobileBrand {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* کارت اصلی ورود - عریض و فشرده بر اساس تغییرات درخواستی قبلی شما */
+.card {
+    width: 100%;
+    max-width: 540px;
+    padding: 24px 40px;
+    background: #ffffff;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 0px 15px -2px #000000;
+    box-shadow: 0px 0px 15px -2px #000000;
+    box-sizing: border-box;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: #020617;
+    margin: 0 0 4px 0;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+    margin: 0 0 16px 0;
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    color: black;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #020617;
+}
+
+.required {
+    color: #ef4444;
+}
+
+.input {
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.remember {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    color: #334155;
+    margin-top: -2px;
+}
+
+.remember input {
+    cursor: pointer;
+    width: 14px;
+    height: 14px;
+}
+
+/* دکمه‌های فرم لاگین */
+.button {
+    height: 42px;
+    background: #020617;
+    /* رنگ مشکی خالص مطابق با تصویر دکمه لاگین اصلی */
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.2s;
+}
+
+.button:hover {
+    background: #0f172a;
+}
+
+.passwordlessButton {
+    height: 32px;
+    background: transparent;
+    border: none;
+    color: #020617;
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    margin-top: -4px;
+    margin-bottom: -4px;
+}
+
+.link {
+    text-align: center;
+    font-size: 12px;
+    color: #64748b;
+    text-decoration: none;
+}
+
+.link:hover {
+    text-decoration: underline;
+}
+
+.register {
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+    margin: 0;
+}
+
+.registerLink {
+    color: #020617;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+/* خط جداکننده افقی */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+    margin: 4px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.divider:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: .5em;
+}
+
+/* دکمه‌های ورود با اکانت گوگل و فیسبوک */
+.socialButton {
+    height: 42px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.googleIcon,
+.facebookIcon {
+    font-weight: bold;
+}
+
+.terms {
+    text-align: center;
+    font-size: 11px;
+    color: #64748b;
+    line-height: 1.4;
+    margin-top: 4px;
+}
+
+/* ==========================================================================
+   ریسپانسیو حالت موبایل ۳۹۰ پیکسلی (مطابق تصویر سمت چپ جدید)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .page {
+        background: #ffffff;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 30px 20px;
+    }
+
+    .leftSide {
+        display: none;
+    }
+
+    .rightSide {
+        flex: none;
+        width: 100%;
+        padding: 0;
+        background: #ffffff;
+    }
+
+    .mobileBrand {
+        display: flex;
+    }
+
+    .card {
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+    }
+}

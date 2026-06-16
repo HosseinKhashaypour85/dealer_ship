@@ -2,11 +2,12 @@
     min-height: 100vh;
     display: flex;
     background: #ffffff;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     box-sizing: border-box;
 }
 
-/* سایدبار سمت چپ */
+/* ==========================================================================
+   بخش سمت چپ - دسکتاپ و لپ‌تاپ
+   ========================================================================== */
 .leftSide {
     flex: 1;
     display: flex;
@@ -14,16 +15,6 @@
     justify-content: center;
     padding: 60px;
     background: #ffffff;
-}
-
-/* سایدبار سمت راست */
-.rightSide {
-    flex: 1.4;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
 }
 
 .brand {
@@ -52,8 +43,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 18px;
-    text-align: center;
 }
 
 .description {
@@ -90,7 +79,6 @@
     color: #64748b;
 }
 
-/* اندازه فیکس باکس آیکون‌ها بدون پدینگ جهت جلوگیری از مچاله شدن اموجی */
 .icon {
     width: 36px;
     height: 36px;
@@ -99,10 +87,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 14px;
     flex-shrink: 0;
-    box-sizing: content-box;
-    padding: 5px;
+    padding: 0;
 }
 
 .mobileBrand {
@@ -114,29 +100,50 @@
     text-align: center;
 }
 
-/* کانتینر اصلی فرم - عریض و فشرده مطابق دیزاین جدید شما */
+/* ==========================================================================
+   بخش سمت راست - کانتینر فرم چک کردن ایمیل
+   ========================================================================== */
+.rightSide {
+    flex: 1.4;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+/* کانتینر عریض فشرده */
 .card {
     width: 100%;
     max-width: 540px;
-    padding: 32px 40px;
+    padding: 36px 40px;
     background: #ffffff;
     border-radius: 12px;
     -webkit-box-shadow: 0px 0px 15px -2px #000000;
     box-shadow: 0px 0px 15px -2px #000000;
     box-sizing: border-box;
     text-align: center;
+    /* راستا و تراز وسط برای تمام هدرها */
 }
 
+/* آیکون دایره‌ای تیک دار بالای عنوان */
+.checkIconWrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
 
-.emailIconWrapper {
-    width: 56px;
-    height: 56px;
-    margin: 0 auto 8px;
+.checkCircle {
+    width: 32px;
+    height: 32px;
+    border: 1.5px solid #020617;
     border-radius: 50%;
-    background: #F5F5F5;
     display: flex;
     justify-content: center;
     align-items: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #020617;
 }
 
 .title {
@@ -149,7 +156,7 @@
 .subtitle {
     font-size: 13px;
     color: #64748b;
-    margin: 0 0 24px 0;
+    margin: 0 0 20px 0;
     line-height: 1.5;
 }
 
@@ -164,59 +171,39 @@
     gap: 16px;
 }
 
-.otpLabel {
-    font-size: 12px;
-    font-weight: 600;
-    color: #64748b;
+/* 🌟 باکس سفید راهنمای پوشه اسپم مطابق تصویر شما */
+.infoBox {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 14px 16px;
     text-align: center;
-    margin-bottom: -4px;
-}
-
-/* گرید باکس‌های ورود کد ۶ رقمی */
-.otpContainer {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    width: 100%;
     box-sizing: border-box;
 }
 
-.otpInput {
-    width: 46px;
-    height: 46px;
-    border: 1px solid #e2e8f0;
-    border-radius: 8px;
-    background: #f8fafc;
-    font-size: 18px;
-    font-weight: 600;
-    text-align: center;
-    outline: none;
-    transition: all 0.2s;
-    color: black;
-}
-
-.otpInput:focus {
-    border-color: #94a3b8;
-    background: #ffffff;
-}
-
-/* بخش استایل تایمر معکوس */
-.timerWrapper {
+.infoText {
     font-size: 12px;
-    color: #94a3b8;
-    text-align: center;
-    margin-top: -4px;
-}
-
-.timerCountdown {
     color: #475569;
-    font-weight: 600;
+    line-height: 1.5;
+    margin: 0;
 }
 
-/* دکمه هماهنگ طوسی/سرمه‌ای با عکس */
+/* دکمه اینلاین و متنی Try Again داخل باکس */
+.tryAgainBtn {
+    background: transparent;
+    border: none;
+    color: #020617;
+    font-weight: 600;
+    text-decoration: underline;
+    cursor: pointer;
+    padding: 0;
+    font-size: 12px;
+}
+
+/* دکمه اصلی مشکی رنگ Back to Sign In */
 .button {
-    height: 44px;
-    background: #7c8ba1;
+    height: 42px;
+    background: #020617;
     color: white;
     border: none;
     border-radius: 6px;
@@ -224,46 +211,11 @@
     font-weight: 600;
     cursor: pointer;
     width: 100%;
-    margin-top: 4px;
     transition: background 0.2s;
 }
 
 .button:hover {
-    background: #64748b;
-}
-
-/* بخش لینک‌های پایینی */
-.linksContainer {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 4px;
-}
-
-.changeEmailLink {
-    font-size: 12px;
-    color: #64748b;
-    text-decoration: none;
-}
-
-.changeEmailLink:hover {
-    text-decoration: underline;
-}
-
-.resendText {
-    font-size: 12px;
-    color: #64748b;
-    margin: 0;
-}
-
-.resendLink {
-    color: #020617;
-    text-decoration: none;
-    font-weight: 700;
-}
-
-.resendLink:hover {
-    text-decoration: underline;
+    background: #0f172a;
 }
 
 /* ==========================================================================
@@ -297,35 +249,4 @@
         padding: 0;
         max-width: 100%;
     }
-
-    .otpInput {
-        width: 40px;
-        height: 40px;
-    }
-}
-
-/* دکمه در حالت پیش‌فرض (غیرفعال / خاکستری کمرنگ) */
-.button {
-    height: 44px;
-    background: #cbd5e1;
-    color: #ffffff;
-    border: none;
-    border-radius: 6px;
-    font-size: 13px;
-    font-weight: 600;
-    cursor: not-allowed;
-    width: 100%;
-    margin-top: 4px;
-    transition: all 0.3s ease;
-}
-
-/* استایل فعال شدن دکمه بعد از پر شدن تمام باکس‌ها */
-.buttonActive {
-    background: #020617;
-    /* تغییر رنگ به مشکیِ عکس */
-    cursor: pointer;
-}
-
-.buttonActive:hover {
-    background: #0f172a;
 }

@@ -4,18 +4,26 @@ import { useRouter } from "next/navigation";
 import styles from "./AccountCreationForm.module.css";
 import Image from "next/image";
 import localFont from "next/font/local";
+import React, { useState } from "react";
+import Link from "next/link";
 
 const inter = localFont({
-  src : '../../assets/fonts/Inter_18pt-Bold.ttf'
-})
+  src: '../../assets/fonts/Inter_18pt-Bold.ttf'
+});
 
-export default function AccountCreationForm() {
+export default function PasswordlessLoginForm() {
   const router = useRouter();
+  const [email, setEmail] = useState('');
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    router.push('/auth/otp');
-  }
+
+    if (email) {
+      // ذخیره ایمیل وارد شده برای نمایش داینامیک در صفحه OTP
+      localStorage.setItem('user_email', email);
+      router.push('/auth/otp');
+    }
+  };
 
   return (
     <div className={`${styles.page} ${inter.className}`}>
@@ -48,7 +56,7 @@ export default function AccountCreationForm() {
             <div className={styles.icon}>
               <Image
                 src="/icons/sheildIcon.svg"
-                alt="Car Icon"
+                alt="Shield Icon"
                 width={25}
                 height={25}
               />
@@ -63,7 +71,7 @@ export default function AccountCreationForm() {
             <div className={styles.icon}>
               <Image
                 src="/icons/starIcon.svg"
-                alt="Car Icon"
+                alt="Star Icon"
                 width={25}
                 height={25}
               />
@@ -78,7 +86,7 @@ export default function AccountCreationForm() {
             <div className={styles.icon}>
               <Image
                 src="/icons/checkIcon.svg"
-                alt="Car Icon"
+                alt="Check Icon"
                 width={25}
                 height={25}
               />
@@ -91,7 +99,7 @@ export default function AccountCreationForm() {
         </div>
       </div>
 
-      {/* بخش سمت راست - کانتینر فرم فشرده و عریض */}
+      {/* بخش سمت راست - کانتینر فرم ورود بدون رمز */}
       <div className={styles.rightSide}>
         <div className={styles.mobileBrand}>
           <div className={styles.logo}>
@@ -107,9 +115,10 @@ export default function AccountCreationForm() {
         </div>
 
         <div className={styles.card}>
-          <h2 className={styles.title}>Create your Account</h2>
+          {/* عنوان‌ها مطابق با عکس جدید شما تنظیم شده است */}
+          <h2 className={styles.title}>Login Without Password</h2>
           <p className={styles.subtitle}>
-            Create your account to access your personal dealership dashboard
+            Welcome back! Please enter your details.
           </p>
 
           <form className={styles.form} onSubmit={handleSubmit}>
@@ -120,7 +129,10 @@ export default function AccountCreationForm() {
               <input
                 className={styles.input}
                 type="email"
-                placeholder="ava.wright@gmail.com"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
               />
             </div>
 
@@ -128,8 +140,11 @@ export default function AccountCreationForm() {
               Send Verification Code
             </button>
 
+            {/* لینک ارجاع به ساخت اکانت جدید مطابق عکس */}
             <p className={styles.register}>
-              Already have an account? <a href="#" className={styles.registerLink}>Login</a>
+              Don't have an account?                             <Link href="/auth/signUp" className={styles.registerLink}>
+                Create an account
+              </Link>
             </p>
 
             <div className={styles.divider}>

@@ -1,35 +1,34 @@
 "use client";
 
-import React, { useState } from "react";
-import styles from "./LoginForm.module.css";
+import { useRouter } from "next/navigation";
+import styles from "./ForgotPwd.module.css"; // استفاده از ساختار استایل‌های هماهنگ، پهن و بدون اورفلو
 import Image from "next/image";
 import localFont from "next/font/local";
-import { useRouter } from "next/navigation";
+import React, { useState } from "react";
 import Link from "next/link";
 
 const inter = localFont({
     src: '../../assets/fonts/Inter_18pt-Bold.ttf'
-})
-export default function LoginForm() {
+});
+
+export default function ForgotPassword() {
     const router = useRouter();
-
-    const handleCreateAccBtn = (e: React.FormEvent<HTMLFormElement>) => {
-        e.preventDefault();
-        router.push('/auth/creation');
-    };
-
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
-    const [rememberMe, setRememberMe] = useState(false);
+    const [email, setEmail] = useState('');
 
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
-        // if (email) {
-        //     localStorage.setItem('user_email' , email);
-        //     router.push('/auth/otp');
-        // }
+        e.preventDefault();
+
+        if (email) {
+            // ذخیره ایمیل در لوکال استوریج در صورت نیاز برای مراحل بعدی بازیابی
+            localStorage.setItem('user_email', email);
+            console.log("Reset link requested for:", email);
+            // اینجا می‌توانید کاربر را به صفحه تایید یا استپ بعدی هدایت کنید
+        }
     };
 
-
+    const handleBackToLogin = () => {
+        router.push('/auth/login'); // هدایت به صفحه لاگین اصلی
+    };
 
     return (
         <div className={`${styles.page} ${inter.className}`}>
@@ -41,8 +40,8 @@ export default function LoginForm() {
                             <Image
                                 src="/icons/carIcon.svg"
                                 alt="Car Icon"
-                                width={30}
-                                height={30}
+                                width={25}
+                                height={25}
                             />
                         </span>
                     </div>
@@ -62,7 +61,7 @@ export default function LoginForm() {
                         <div className={styles.icon}>
                             <Image
                                 src="/icons/sheildIcon.svg"
-                                alt="Car Icon"
+                                alt="Shield Icon"
                                 width={25}
                                 height={25}
                             />
@@ -77,7 +76,7 @@ export default function LoginForm() {
                         <div className={styles.icon}>
                             <Image
                                 src="/icons/starIcon.svg"
-                                alt="Car Icon"
+                                alt="Star Icon"
                                 width={25}
                                 height={25}
                             />
@@ -92,7 +91,7 @@ export default function LoginForm() {
                         <div className={styles.icon}>
                             <Image
                                 src="/icons/checkIcon.svg"
-                                alt="Car Icon"
+                                alt="Check Icon"
                                 width={25}
                                 height={25}
                             />
@@ -105,7 +104,7 @@ export default function LoginForm() {
                 </div>
             </div>
 
-            {/* بخش سمت راست - کانتینر فرم لاگین اصلی */}
+            {/* بخش سمت راست - کانتینر فرم فراموشی رمز عبور */}
             <div className={styles.rightSide}>
                 <div className={styles.mobileBrand}>
                     <div className={styles.logo}>
@@ -121,86 +120,45 @@ export default function LoginForm() {
                 </div>
 
                 <div className={styles.card}>
-                    <h2 className={styles.title}>Login</h2>
+                    {/* دکمه بازگشت به لاگین بالای کارت */}
+                    <button type="button" className={styles.backButton} onClick={handleBackToLogin}>
+                        <span className={styles.backArrow}>←</span> Back to login
+                    </button>
+
+                    {/* آیکون قفل بالای هدر مطابق دیزاین جدید دسکتاپ */}
+                    <div className={styles.lockIconWrapper}>
+                        <Image
+                            src="/icons/lockIcon.svg"
+                            alt="Star Icon"
+                            width={25}
+                            height={25}
+                        />
+                    </div>
+
+                    <h2 className={styles.title}>Forgot Password?</h2>
                     <p className={styles.subtitle}>
-                        Welcome back! Please enter your details.
+                        No worries! Enter your email and we'll send you reset instructions
                     </p>
 
                     <form className={styles.form} onSubmit={handleSubmit}>
-                        {/* فیلد ایمیل یا نام کاربری */}
                         <div className={styles.inputGroup}>
                             <label className={styles.label}>
-                                Email Address or Username <span className={styles.required}>*</span>
+                                Email Address <span className={styles.required}>*</span>
                             </label>
                             <input
                                 className={styles.input}
-                                type="text"
-                                placeholder="Enter your email or username"
+                                type="email"
+                                placeholder="Enter your email"
                                 value={email}
                                 onChange={(e) => setEmail(e.target.value)}
                                 required
                             />
                         </div>
 
-                        {/* فیلد پسورد */}
-                        <div className={styles.inputGroup}>
-                            <label className={styles.label}>
-                                Password <span className={styles.required}>*</span>
-                            </label>
-                            <input
-                                className={styles.input}
-                                type="password"
-                                placeholder="Enter your password"
-                                value={password}
-                                onChange={(e) => setPassword(e.target.value)}
-                                required
-                            />
-                        </div>
-
-                        {/* گزینه به خاطر سپردن اکانت */}
-                        <div className={styles.remember}>
-                            <input
-                                type="checkbox"
-                                id="rememberMe"
-                                checked={rememberMe}
-                                onChange={(e) => setRememberMe(e.target.checked)}
-                            />
-                            <label htmlFor="rememberMe">Remember me</label>
-                        </div>
-
-                        {/* دکمه اصلی ورود */}
                         <button className={styles.button} type="submit">
-                            Login
-                        </button>
-
-                        {/* گزینه‌های فرعی ورود و فراموشی رمز */}
-                        <button className={styles.passwordlessButton} type="button">
-                            <Link href="/auth/loginwithoutpwd" className={styles.registerLink}>
-                                Login without password
+                            <Link href="/auth/forgotpassword/checkMail">
+                                Send reset instructions
                             </Link>
-                        </button>
-
-                        <Link href="/auth/forgotpassword" className={styles.link}>
-                            Can't remember your password?
-                        </Link>
-                        <p className={styles.register}>
-                            Don't have an account?{" "}
-                            <Link href="/auth/signUp" className={styles.registerLink}>
-                                Sign up
-                            </Link>
-                        </p>
-
-                        <div className={styles.divider}>
-                            <span>Or continue with</span>
-                        </div>
-
-                        {/* دکمه‌های ورود اجتماعی */}
-                        <button className={styles.socialButton} type="button">
-                            <span className={styles.googleIcon}>G</span> Continue with Google
-                        </button>
-
-                        <button className={styles.socialButton} type="button">
-                            <span className={styles.facebookIcon}>f</span> Continue with Facebook
                         </button>
 
                         <p className={styles.terms}>

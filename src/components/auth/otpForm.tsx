@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef } from "react";
+import React, { useState, useRef, useEffect } from "react";
 import styles from "../OtpForm.module.css";
 import Image from "next/image";
 
@@ -9,7 +9,55 @@ export default function OtpForm() {
     const [otp, setOtp] = useState<string[]>(new Array(6).fill(""));
 
     // رفرنس به المان‌های HTMLInputElement برای مدیریت فوکوس
+    const [displayEmail, setDisplayEmail] = useState("your email");
     const inputRefs = useRef<(HTMLInputElement | null)[]>([]);
+
+    useEffect(() => {
+        const savedEmail = localStorage.getItem('user_email');
+        if (savedEmail) {
+            setDisplayEmail(savedEmail);
+        }
+    }, [])
+
+    const [timeLeft, setTimeLeft] = useState(60);
+
+    useEffect(() => {
+        const savedEndTime = localStorage.getItem("otp_end_time");
+
+        if (savedEndTime) {
+            const remaining = Math.max(
+                0,
+                Math.floor((Number(savedEndTime) - Date.now()) / 1000)
+            );
+            setTimeLeft(remaining);
+        } else {
+            const endTime = Date.now() + 60 * 1000;
+            localStorage.setItem("otp_end_time", endTime.toString());
+        }
+    }, []);
+
+    useEffect(() => {
+        const timer = setInterval(() => {
+            const savedEndTime = localStorage.getItem("otp_end_time");
+
+            if (!savedEndTime) return;
+
+            const remaining = Math.max(
+                0,
+                Math.floor((Number(savedEndTime) - Date.now()) / 1000)
+            );
+
+            setTimeLeft(remaining);
+
+            if (remaining <= 0) {
+                clearInterval(timer);
+                localStorage.removeItem("otp_end_time");
+            }
+        }, 1000);
+
+        return () => clearInterval(timer);
+    }, []);
+
 
     // هندلر تغییر مقدار اینپوت با تایپ‌های استاندارد ری‌اکت
     const handleChange = (element: HTMLInputElement, index: number) => {
@@ -89,23 +137,29 @@ export default function OtpForm() {
             <div className={styles.rightSide}>
                 <div className={styles.mobileBrand}>
                     <div className={styles.logo}>
-                                                <Image
-                                src="/icons/carIcon.svg"
-                                alt="Car Icon"
-                                width={30}
-                                height={30}
-                            />
+                        <Image
+                            src="/icons/carIcon.svg"
+                            alt="Car Icon"
+                            width={30}
+                            height={30}
+                        />
                     </div>
                     <h2 className={styles.brandTitle}>DMS Pro</h2>
                     <span className={styles.brandSubtitle}>Dealer Management System</span>
                 </div>
 
                 <div className={styles.card}>
-                    <div className={styles.emailIconWrapper}>📩</div>
+                    <div className={styles.emailIconWrapper}>
+                        <Image
+                            src="/icons/mailIcon.svg"
+                            alt="Car Icon"
+                            width={25}
+                            height={25} />
+                    </div>
                     <h2 className={styles.title}>Check Your Email</h2>
                     <p className={styles.subtitle}>
                         We've sent a 6-digit code to <br />
-                        <strong className={styles.emailHighlight}>alex.delpiero10.st@gmail.com</strong>
+                        <strong className={styles.emailHighlight}>{displayEmail}</strong>
                     </p>
 
                     <form className={styles.form} onSubmit={(e) => e.preventDefault()}>
@@ -132,7 +186,10 @@ export default function OtpForm() {
                         </div>
 
                         <div className={styles.timerWrapper}>
-                            Time: <span className={styles.timerCountdown}>60 seconds</span>
+                            Time:
+                            <span className={styles.timerCountdown}>
+                                {timeLeft > 0 ? `${timeLeft} seconds` : "Expired"}
+                            </span>
                         </div>
 
                         {/* اعمال داینامیک استایل دکمه بر اساس کامل شدن کد */}

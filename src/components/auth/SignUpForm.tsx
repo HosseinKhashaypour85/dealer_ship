@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState , useRef , useEffect } from "react";
 import styles from "../auth/SignUpForm.module.css";
 import Image from "next/image";
 

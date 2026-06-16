@@ -1,0 +1,358 @@
+.page {
+    min-height: 100vh;
+    display: flex;
+    background: #ffffff;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   بخش سمت چپ - مخصوص دسکتاپ و لپ‌تاپ
+   ========================================================================== */
+.leftSide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 60px;
+    background: #ffffff;
+}
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.brandTitle {
+    font-size: 22px;
+    font-weight: 700;
+    color: #020617;
+    margin: 0;
+}
+
+.brandSubtitle {
+    font-size: 12px;
+    color: #64748b;
+}
+
+.logo {
+    width: 44px;
+    height: 44px;
+    border-radius: 8px;
+    background: #020617;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.description {
+    margin-top: 16px;
+    max-width: 400px;
+    color: #475569;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.features {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.feature {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+
+.feature h4 {
+    margin: 0 0 2px 0;
+    font-size: 14px;
+    font-weight: 600;
+    color: #020617;
+}
+
+.feature p {
+    margin: 0;
+    font-size: 12px;
+    color: #64748b;
+}
+
+/* باکس ثابت آیکون‌های فیچرها بدون پدینگ مخرب */
+.icon {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: #f1f5f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 0;
+}
+
+/* برند بالای فرم (مخصوص حالت موبایل) */
+.mobileBrand {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* ==========================================================================
+   بخش سمت راست - کانتینر اصلی و کارت فرم‌ها
+   ========================================================================== */
+.rightSide {
+    flex: 1.4;
+    /* پهن‌تر شدن فضا برای باز شدن کامل عرض فرم */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background: #f8fafc; */
+    padding: 20px;
+}
+
+/* کارت اصلی ورود و ثبت نام - کاملاً عریض با ارتفاع فشرده */
+.card {
+    width: 100%;
+    max-width: 540px;
+    /* عریض‌تر شدن کانتینر برای پهن شدن فیلدها */
+    padding: 24px 40px;
+    /* پدینگ بهینه شده برای فشرده‌سازی ارتفاع */
+    background: #ffffff;
+    border-radius: 12px;
+    -webkit-box-shadow: 0px 0px 15px -2px #000000;
+    box-shadow: 0px 0px 15px -2px #000000;
+    box-sizing: border-box;
+}
+
+/* دکمه بازگشت ظریف بالای کارت‌ها (Back to login / Back) */
+.backButton {
+    background: transparent;
+    border: none;
+    color: #4A5565;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 0;
+    margin-bottom: 12px;
+}
+
+.backButton:hover {
+    color: #020617;
+}
+
+/* آیکون قفل صفحه فراموشی رمز عبور */
+.lockIconWrapper {
+    width: 56px;
+    height: 56px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 12px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 50%;
+    background: #f1f5f9;
+}
+
+.title {
+    font-size: 22px;
+    font-weight: 700;
+    text-align: center;
+    color: #020617;
+    margin: 0 0 4px 0;
+}
+
+.subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+    margin: 0 0 16px 0;
+}
+
+/* ساختار کلی فرم و اینپوت‌ها */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    /* فواصل فشرده برای جلوگیری از ارتفاع زیاد */
+}
+
+.inputGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #020617;
+}
+
+.required {
+    color: #ef4444;
+}
+
+.input {
+    height: 42px;
+    padding: 0 12px;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 13px;
+    outline: none;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.input:focus {
+    border-color: #94a3b8;
+}
+
+/* دکمه اصلی مشکی رنگِ برند */
+.button {
+    height: 42px;
+    background: #020617;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 6px;
+    transition: background 0.2s;
+}
+
+.button:hover {
+    background: #0f172a;
+}
+
+.register {
+    text-align: center;
+    font-size: 13px;
+    color: #64748b;
+    margin: 4px 0 0 0;
+}
+
+.registerLink {
+    color: #020617;
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.registerLink:hover {
+    text-decoration: underline;
+}
+
+/* خط جداکننده افقی مابین متدهای ورود */
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+    margin: 4px 0;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.divider:not(:empty)::before {
+    margin-right: .5em;
+}
+
+.divider:not(:empty)::after {
+    margin-left: .5em;
+}
+
+/* دکمه‌های ورود با اکانت گوگل و فیسبوک */
+.socialButton {
+    height: 42px;
+    background: white;
+    border: 1px solid #e2e8f0;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #334155;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    cursor: pointer;
+    box-sizing: border-box;
+    transition: background 0.2s;
+}
+
+.socialButton:hover {
+    background: #f8fafc;
+}
+
+.googleIcon,
+.facebookIcon {
+    font-weight: bold;
+}
+
+.terms {
+    text-align: center;
+    font-size: 11px;
+    color: #64748b;
+    line-height: 1.4;
+    margin-top: 4px;
+}
+
+.terms a {
+    color: #475569;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   ریسپانسیو حالت موبایل ۳۹۰ پیکسلی (کاملاً چسبیده به کناره‌ها و بدون پس‌زمینه خاکستری)
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .page {
+        background: #ffffff;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 30px 20px;
+    }
+
+    .leftSide {
+        display: none;
+        /* مخفی شدن سایدبار در موبایل */
+    }
+
+    .rightSide {
+        flex: none;
+        width: 100%;
+        padding: 0;
+        background: #ffffff;
+    }
+
+    .mobileBrand {
+        display: flex;
+        /* لود لوگو بالای باکس در حالت موبایل */
+    }
+
+    .card {
+        box-shadow: none;
+        /* حذف افکت کارت دسکتاپ مطابق عکس موبایل */
+        padding: 0;
+        max-width: 100%;
+    }
+}

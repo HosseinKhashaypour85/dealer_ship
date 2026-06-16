@@ -1,0 +1,117 @@
+/* کانتینر کارت - بسیار عریض با ظاهر کشیده مد نظر شما در دسکتاپ */
+.card {
+  width: 100%;
+  max-width: 540px; 
+  padding: 24px 40px; 
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.04);
+  box-sizing: border-box;
+}
+
+.title {
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+  color: #020617;
+  margin: 0 0 4px 0;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 13px;
+  color: #64748b;
+  margin: 0 0 16px 0;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px; 
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #020617;
+}
+
+.input {
+  height: 42px; 
+  padding: 0 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* دکمه اصلی مشکی رنگ */
+.button {
+  height: 42px; 
+  background: #020617; 
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 6px;
+}
+
+/* خط جداکننده */
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 12px;
+  margin: 4px 0; 
+}
+.divider::before, .divider::after {
+  content: '';
+  flex: 1;
+  border-bottom: 1px solid #e2e8f0;
+}
+.divider:not(:empty)::before { margin-right: .5em; }
+.divider:not(:empty)::after { margin-left: .5em; }
+
+/* دکمه‌های ورود با اکانت گوگل و فیسبوک */
+.socialButton {
+  height: 42px; 
+  background: white;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #334155;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+
+/* ریسپانسیو حالت موبایل ۳۹۰ پیکسلی (تصویر سمت چپ شما) */
+@media (max-width: 1024px) {
+  .page {
+    background: #ffffff;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 30px 20px;
+  }
+  .leftSide { display: none; }
+  .rightSide { flex: none; width: 100%; padding: 0; background: #ffffff; }
+  .mobileBrand { display: flex; }
+  .card { box-shadow: none; padding: 0; max-width: 100%; }
+}

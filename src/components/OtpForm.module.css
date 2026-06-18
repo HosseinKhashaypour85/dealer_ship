@@ -313,12 +313,17 @@
     border-radius: 6px;
     font-size: 13px;
     font-weight: 600;
-    cursor: not-allowed;
     width: 100%;
     margin-top: 4px;
     transition: all 0.3s ease;
-}
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-decoration: none;
+    cursor: not-allowed;
+}
 /* استایل فعال شدن دکمه بعد از پر شدن تمام باکس‌ها */
 .buttonActive {
     background: #020617;

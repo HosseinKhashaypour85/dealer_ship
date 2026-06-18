@@ -3,10 +3,13 @@
 import React, { useState, useRef, useEffect } from "react";
 import styles from "../OtpForm.module.css";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function OtpForm() {
+
     // مشخص کردن تایپ استیت به عنوان آرایه‌ای از رشته‌ها
     const [otp, setOtp] = useState<string[]>(new Array(6).fill(""));
+
 
     // رفرنس به المان‌های HTMLInputElement برای مدیریت فوکوس
     const [displayEmail, setDisplayEmail] = useState("your email");
@@ -193,13 +196,18 @@ export default function OtpForm() {
                         </div>
 
                         {/* اعمال داینامیک استایل دکمه بر اساس کامل شدن کد */}
-                        <button
-                            className={`${styles.button} ${isOtpComplete ? styles.buttonActive : ""}`}
-                            type="submit"
-                            disabled={!isOtpComplete}
+                        <Link
+                            href={isOtpComplete ? "/auth/businessprofile" : "#"}
+                            className={`${styles.button} ${isOtpComplete ? styles.buttonActive : styles.buttonDisabled
+                                }`}
+                            onClick={(e) => {
+                                if (!isOtpComplete) {
+                                    e.preventDefault();
+                                }
+                            }}
                         >
                             Verify & Continue
-                        </button>
+                        </Link>
 
                         <div className={styles.linksContainer}>
                             <a href="#" className={styles.changeEmailLink}>Change email address</a>

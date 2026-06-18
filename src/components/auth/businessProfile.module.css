@@ -1,0 +1,446 @@
+.page {
+  min-height: 100vh;
+  display: flex;
+  background: #ffffff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+.leftSide {
+  flex: 0.8;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 60px;
+  background: #ffffff;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+}
+
+.rightSide {
+  flex: 1.4;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* background: #f8fafc;  */
+  padding: 40px 20px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.brandTitle {
+  font-size: 22px;
+  font-weight: 700;
+  color: #020617;
+  margin: 0;
+}
+
+.brandSubtitle {
+  font-size: 12px;
+  color: #64748b;
+}
+
+.logo {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  background: #020617;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  color: white;
+}
+
+.description {
+  margin-top: 16px;
+  max-width: 400px;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.features {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.feature {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.feature h4 {
+  margin: 0 0 2px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #020617;
+}
+
+.feature p {
+  margin: 0;
+  font-size: 12px;
+  color: #64748b;
+}
+
+.icon {
+  width: 36px;  
+  height: 36px; 
+  border-radius: 8px;
+  background: #f1f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #020617;
+  flex-shrink: 0;
+}
+
+.mobileBrand {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+/* کانتینر اصلی فرم عریض پروفایل */
+.card {
+  width: 100%;
+  max-width: 760px; 
+  padding: 40px; 
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+
+.formHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.headerIcon {
+  width: 54px;
+  height: 54px;
+  background: #f1f5f9;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #020617;
+  margin-bottom: 12px;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #020617;
+  margin: 0 0 6px 0;
+}
+
+.subtitle {
+  font-size: 13px;
+  color: #64748b;
+  margin: 0;
+}
+
+/* استایل استپر پیشرفت فرم */
+.stepper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 36px;
+  gap: 12px;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stepNumber {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 1px solid #cbd5e1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 11px;
+  color: #64748b;
+  font-weight: 600;
+}
+
+.completedStep {
+  background: #22c55e;
+  border-color: #22c55e;
+  color: white;
+}
+
+.activeStep {
+  background: #020617;
+  border-color: #020617;
+  color: white;
+}
+
+.stepLabel {
+  font-size: 12px;
+  font-weight: 500;
+  color: #475569;
+}
+
+.stepLine {
+  flex: 0.2;
+  height: 1px;
+  background: #e2e8f0;
+  max-width: 60px;
+}
+
+.stepLineActive {
+  flex: 0.2;
+  height: 1px;
+  background: #020617;
+  max-width: 60px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; 
+}
+
+/* سرفصل‌های دسته‌بندی فیلدها */
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border-bottom: 1px solid #f1f5f9;
+  padding-bottom: 8px;
+  margin-top: 10px;
+}
+
+.sectionIcon {
+  color: #475569;
+}
+
+.sectionHeader h3 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #334155;
+  margin: 0;
+}
+
+.row {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.row .inputGroup {
+  flex: 1;
+}
+
+/* ساختار گرید ۴ ستونه بخش آدرس دسکتاپ */
+.gridFour {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr 0.8fr;
+  gap: 16px;
+  width: 100%;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.label {
+  font-size: 12px;
+  font-weight: 600;
+  color: #020617;
+}
+
+.required {
+  color: #ef4444;
+}
+
+.input, .select {
+  height: 40px; 
+  padding: 0 12px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 13px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+
+.input:focus, .select:focus {
+  border-color: #94a3b8;
+}
+
+/* زون درگ اند دراپ آپلود فایل Shadcn */
+.uploadZone {
+  border: 1px dashed #cbd5e1;
+  border-radius: 8px;
+  padding: 24px;
+  text-align: center;
+  background: #f8fafc;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.uploadZone:hover {
+  background: #f1f5f9;
+}
+
+.fileInput {
+  display: none;
+}
+
+.uploadLabel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #334155;
+  font-weight: 500;
+}
+
+.uploadIcon {
+  color: #64748b;
+  margin-bottom: 4px;
+}
+
+.uploadHint {
+  font-size: 11px;
+  color: #94a3b8;
+}
+
+/* کادر اعلان انتهای فرم */
+.infoBox {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+}
+
+.infoContent {
+  display: flex;
+  gap: 12px;
+}
+
+.infoIcon {
+  color: #020617;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.infoContent strong {
+  font-size: 13px;
+  color: #020617;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.infoContent p {
+  font-size: 12px;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0;
+}
+
+.closeInfo {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 0;
+}
+
+.closeInfo:hover {
+  color: #475569;
+}
+
+.button {
+  height: 44px; 
+  background: #020617; 
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 8px;
+}
+
+.footerNote {
+  display: block;
+  text-align: center;
+  font-size: 11px;
+  color: #94a3b8;
+  margin-top: -8px;
+}
+
+/* ==========================================================================
+   ریسپانسیو کامل حالت موبایل (طبق ابعاد طرح ۳۹۰ پیکسلی سمت چپ شما)
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .page {
+    flex-direction: column;
+    padding: 24px 16px;
+  }
+
+  .leftSide {
+    display: none;
+  }
+
+  .rightSide {
+    width: 100%;
+    padding: 0;
+    background: #ffffff;
+  }
+
+  .mobileBrand {
+    display: flex;
+  }
+
+  .card {
+    box-shadow: none;
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  /* تک ستونه شدن گرید چهار تایی بخش شهر و کد پستی در موبایل */
+  .gridFour {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}

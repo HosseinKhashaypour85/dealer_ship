@@ -1,0 +1,78 @@
+{
+  "brand": {
+    "title": "DMS Pro",
+    "subtitle": "Händlermanagementsystem"
+  },
+  "description": "Optimieren Sie Ihre Autohaus-Abläufe mit unserer umfassenden Management-Plattform.",
+  "features": {
+    "secure": {
+      "title": "Sicher & Zuverlässig",
+      "desc": "Verschlüsselung auf Bankenniveau für Ihre Daten"
+    },
+    "ai": {
+      "title": "KI-gestützte Einblicke",
+      "desc": "Intelligente Analysen und Empfehlungen"
+    },
+    "allInOne": {
+      "title": "All-in-One-Lösung",
+      "desc": "Verwalten Sie Verkauf, Lagerbestand und Service"
+    }
+  },
+  "login": {
+    "title": "Anmelden",
+    "subtitle": "Willkommen zurück! Bitte geben Sie Ihre Daten ein.",
+    "emailOrUser": "E-Mail-Adresse oder Benutzername",
+    "password": "Passwort",
+    "rememberMe": "Angemeldet bleiben",
+    "submitBtn": "Anmelden",
+    "passwordlessBtn": "Ohne Passwort anmelden",
+    "forgotPassword": "Passwort vergessen?",
+    "noAccount": "Haben Sie noch kein Konto?",
+    "createAccount": "Konto erstellen"
+  },
+  "signup": {
+    "title": "Registrieren",
+    "subtitle": "Erste Schritte mit DMS Pro",
+    "firstName": "Vorname",
+    "lastName": "Nachname",
+    "email": "E-Mail-Adresse",
+    "password": "Passwort",
+    "passwordHint": "Muss mindestens 6 Zeichen lang sein",
+    "reTypePassword": "Passwort wiederholen",
+    "phone": "Telefonnummer",
+    "submitBtn": "Konto erstellen",
+    "hasAccount": "Haben Sie bereits ein Konto?",
+    "signIn": "Einloggen",
+    "back": "Zurück"
+  },
+  "otp": {
+    "title": "Überprüfen Sie Ihre E-Mails",
+    "subtitle": "Wir haben einen 6-stelligen Code gesendet an",
+    "enterCode": "Bestätigungscode eingeben",
+    "timer": "Zeit:",
+    "seconds": "Sekunden",
+    "submitBtn": "Verifizieren & Weiter",
+    "changeEmail": "E-Mail-Adresse ändern",
+    "noCode": "Code nicht erhalten?",
+    "resend": "Erneut senden"
+  },
+  "forgotPassword": {
+    "title": "Passwort vergessen?",
+    "subtitle": "Keine Sorge! Geben Sie Ihre E-Mail-Adresse ein und wir senden Ihnen Anweisungen zum Zurücksetzen.",
+    "submitBtn": "Anweisungen senden",
+    "backToLogin": "Zurück zum Login"
+  },
+  "checkMail": {
+    "title": "Überprüfen Sie Ihre E-Mails",
+    "subtitle": "Wir haben Anweisungen zum Zurücksetzen des Passworts gesendet an",
+    "spamNotice": "E-Mail nicht erhalten? Überprüfen Sie Ihren Spam-Ordner oder",
+    "tryAgain": "Erneut versuchen",
+    "submitBtn": "Zurück zum Login"
+  },
+  "common": {
+    "or": "Oder weiter mit",
+    "google": "Mit Google fortfahren",
+    "facebook": "Mit Facebook fortfahren",
+    "terms": "Indem Sie fortfahren, stimmen Sie unseren Nutzungsbedingungen und Datenschutzbestimmungen zu."
+  }
+}

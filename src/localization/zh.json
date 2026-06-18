@@ -1,0 +1,78 @@
+{
+  "brand": {
+    "title": "DMS Pro",
+    "subtitle": "汽车经销商管理系统"
+  },
+  "description": "使用我们全面的管理平台简化您的经销商运营。",
+  "features": {
+    "secure": {
+      "title": "安全可靠",
+      "desc": "为您的数据提供银行级加密保护"
+    },
+    "ai": {
+      "title": "AI 智能洞察",
+      "desc": "智能分析与推荐"
+    },
+    "allInOne": {
+      "title": "一体化解决方案",
+      "desc": "管理销售、库存和售后服务"
+    }
+  },
+  "login": {
+    "title": "登录",
+    "subtitle": "欢迎回来！请输入您的详细信息。",
+    "emailOrUser": "电子邮箱或用户名",
+    "password": "密码",
+    "rememberMe": "记住我",
+    "submitBtn": "登录",
+    "passwordlessBtn": "无密码登录",
+    "forgotPassword": "忘记密码？",
+    "noAccount": "还没有账号？",
+    "createAccount": "创建账号"
+  },
+  "signup": {
+    "title": "注册",
+    "subtitle": "开始使用 DMS Pro",
+    "firstName": "名",
+    "lastName": "姓",
+    "email": "电子邮箱地址",
+    "password": "密码",
+    "passwordHint": "必须至少包含 6 个字符",
+    "reTypePassword": "确认密码",
+    "phone": "手机号码",
+    "submitBtn": "创建账号",
+    "hasAccount": "已有账号？",
+    "signIn": "登录",
+    "back": "返回"
+  },
+  "otp": {
+    "title": "检查您的邮箱",
+    "subtitle": "我们已将 6 位数验证码发送至",
+    "enterCode": "输入验证码",
+    "timer": "剩余时间：",
+    "seconds": "秒",
+    "submitBtn": "验证并继续",
+    "changeEmail": "修改电子邮箱",
+    "noCode": "未收到验证码？",
+    "resend": "重新发送"
+  },
+  "forgotPassword": {
+    "title": "忘记密码？",
+    "subtitle": "没关系！输入您的电子邮箱，我们将为您发送重置说明。",
+    "submitBtn": "发送重置说明",
+    "backToLogin": "返回登录"
+  },
+  "checkMail": {
+    "title": "检查您的邮箱",
+    "subtitle": "我们已将密码重置说明发送至",
+    "spamNotice": "未收到邮件？请检查垃圾邮件文件夹或",
+    "tryAgain": "重试",
+    "submitBtn": "返回登录"
+  },
+  "common": {
+    "or": "或通过以下方式继续",
+    "google": "使用 Google 账号登录",
+    "facebook": "使用 Facebook 账号登录",
+    "terms": "继续操作即表示您同意我们的服务条款和隐私政策。"
+  }
+}
